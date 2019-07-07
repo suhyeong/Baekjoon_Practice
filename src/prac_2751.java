@@ -1,4 +1,6 @@
-import java.util.*;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class prac_2751 {
 	/*
@@ -46,16 +48,17 @@ public class prac_2751 {
 		}
 	}*/
 	
-	public static void main(String args[]) {
-		Scanner s = new Scanner(System.in);
-		int n = s.nextInt();
-		int array[] = new int[n];
+	public static void main(String args[]) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(bf.readLine());
+		ArrayList<Integer> data = new ArrayList<Integer>();
 		for(int i=0;i<n;i++) {
-			array[i] = s.nextInt();
+			data.add(Integer.parseInt(bf.readLine()));
 		}
-		Arrays.sort(array);
+		Collections.sort(data);
 		for(int i=0;i<n;i++) {
-			System.out.println(array[i]);
+			System.out.println(data.get(i));
 		}
+		bf.close();
 	}
 }
